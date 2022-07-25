@@ -1,10 +1,10 @@
 # Web-docker-tickstack
 
-Dashboard Stack installation on Docker i.e Telegraf, InfluxDB, Chronograf and, Grafana.
+Dashboard Stack installation on Docker i.e Telegraf, InfluxDB, Node-red and, Grafana.
 
 ## Prerequisites
 
-You should have installed docker on your pc either on window, linux or mac. You can download it from
+You should have docker installed on your pc either on window, linux or mac. You can download it from
 https://docs.docker.com/engine/install/
 If you are using windows download and install git on your pc. You can download git from
 https://git-scm.com/downloads
@@ -15,19 +15,25 @@ On windows, have Gitbash or powershell to run commands on the terminal.
 1. On your terminal(gitbash or powershell), clone the repo using the code
 
 ```sh
-git clone https://github.com/ovesorg/web-docker-tickstack.git
+git clone https://github.com/oves-embedded/web-docker-tickStack.git
 ```
 
-2. Change the directory to the cloned repo
+2. Once you have cloned the repo, change the directory to the cloned repo
 
 ```sh
 cd web-docker-tickstack
 ```
 
-3. Run the command to get all the tick-stack images and start them
+3. Run the command for the first time to start of the project
 
 ```sh
 docker-compose up -d
+```
+
+3. Run the command to check if the containers have started
+
+```sh
+docker-compose ps
 ```
 
 N/B
@@ -36,15 +42,20 @@ The first time you run this command it will take sometime to finish downloading 
 ### Ports
 
 1. http://localhost:3000 - grafana
-2. http://localhost:8888 - chronograf
+2. http://localhost:1880 - node-red
 3. http://localhost:8186 - telegraf
 4. http://localhost:8086 - influxdb
 5. http://localhost:1883 - open mosquitto broker
 6. http://localhost:8883 - protected mosquitto broker
 
-### InfluxDB
-- InfluxDB Will be set once you pull the repository. You don't have to set it.
+### Node-red
+- Start Node-Red on http://localhost:1880
 
+  #### How to Import a default flow on Node-Red
+  - On Node-Red, import a default flow from the top right hamburger menu.
+  - Select import
+  - Import the default flow from the folder named resources
+  - After importing, click the deploy button on your right to get the changes.
 
 ### Grafana
 
@@ -91,14 +102,15 @@ The first time you run this command it will take sometime to finish downloading 
       - On Data Sources, click add data source.
       - Search for GraphQl and select it.
       - Under GraphQl settings, add the following:
-          ```sh
-          Name: Oves GraphQL Datasource
+
+        ```sh
+        Name: Oves GraphQL Datasource
           HTTP:
               url: https://dev-microservices-apigateway.omnivoltaic.com/graphql
           Custom HTTP Headers:
               Header: Authorization
               Value: Bearer {Accesstoken}
-          ```
+        ```
       - Save & Test
       - You will get an acknowledge message if everything is set correctly.
       - You can now create your first dashboard while fetching data from GraphQL.
@@ -109,10 +121,6 @@ The first time you run this command it will take sometime to finish downloading 
 - To get new changes use the below commands:
   - Use this command to pull changes from github
     ```sh
-    git pull
+    ./updates.sh
     ```
-  - After new changes have been updated on local environment, restart the containers to load the new changes.
-  
-    ```sh
-    docker-compose up -d
-    ```
+

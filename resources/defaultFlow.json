@@ -1,0 +1,322 @@
+[
+    {
+        "id": "da9e3a4c3b17b1c7",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3faae7b6e25d714f",
+        "type": "inject",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "Open Global Mqtt",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "v": "$join(['dt/OV02/device', $string($floor($random()*20))])",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\t   \"att\":{\t       \"opid\":\"48AH2104000030\",\t       \"ppid\":\"48AH2104000030<<<<<<\",\t       \"flid\":\"\",\t       \"frmv\":\"3.1.2\"\t   },\t   \"sts\":{\t       \"time\":202100010001+$floor($random()*100),\t       \"udtm\":202100010001+$floor($random()*100),\t       \"crtm\":202100010001+$floor($random()*100),\t       \"gpss\" : 4,\t       \"gpfc\" : 100,\t       \"plat\":22+$random()*10,\t       \"plon\":114+$random()*10,\t       \"rcrd\":16+$floor($random()*2),\t       \"trhd\":99+$floor($random()*2),\t       \"tpgd\":69+$floor($random()*2),\t       \"pgst\":1+$floor($random()*2)\t   },\t   \"dta\":{\t       \"aeng\" : 3177+$floor($random()*10),\t       \"acyc\" : 13+$floor($random()*2),\t       \"batp\":100+$floor($random()*50),\t       \"inpp\":200+$floor($random()*50),\t       \"outp\":100+$floor($random()*50),\t       \"pckv\":23200+$floor($random()*1000),\t       \"pckc\":6+$floor($random()*10),\t       \"rsoc\":90+$floor($random()*10),\t       \"rcap\":4+$floor($random()*10),\t       \"fccp\":17904+$floor($random()*10),\t       \"pckt\":110+$floor($random()*10)\t   },\t   \"dia\" : {\t       \"cv01\" : 3189+$floor($random()*1000),\t       \"cv02\" : 3189+$floor($random()*1000),\t       \"cv03\" : 3189+$floor($random()*1000),\t       \"cv04\" : 3189+$floor($random()*1000),\t       \"cv05\" : 3189+$floor($random()*1000),\t       \"cv06\" : 3189+$floor($random()*1000),\t       \"cv07\" : 3189+$floor($random()*1000),\t       \"cv08\" : 3189+$floor($random()*1000)\t   }\t}",
+        "payloadType": "jsonata",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "ad4784c6f6cfe4fb"
+            ]
+        ]
+    },
+    {
+        "id": "8713fe0fd336a8d1",
+        "type": "debug",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b37e77e2b5bb19b6",
+        "type": "mqtt in",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "",
+        "topic": "$join(['dt/OV01/device', $string($floor($random()*10))])",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "8697fa84da0a5aae",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 380,
+        "wires": [
+            [
+                "8713fe0fd336a8d1"
+            ]
+        ]
+    },
+    {
+        "id": "ad4784c6f6cfe4fb",
+        "type": "mqtt out",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3f95c6440d61a454",
+        "x": 670,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7b547845edda2d28",
+        "type": "mqtt out",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3e2b152025c21ebe",
+        "x": 670,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a60626506ddf4209",
+        "type": "inject",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "Open Protected Mqtt",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "v": "$join(['dt/OV02/device', $string($floor($random()*20))])",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{\t   \"att\":{\t       \"opid\":\"48AH2104000030\",\t       \"ppid\":\"48AH2104000030<<<<<<\",\t       \"flid\":\"\",\t       \"frmv\":\"3.1.2\"\t   },\t   \"sts\":{\t       \"time\":202100010001+$floor($random()*100),\t       \"udtm\":202100010001+$floor($random()*100),\t       \"crtm\":202100010001+$floor($random()*100),\t       \"gpss\" : 4,\t       \"gpfc\" : 100,\t       \"plat\":22+$random()*10,\t       \"plon\":114+$random()*10,\t       \"rcrd\":16+$floor($random()*2),\t       \"trhd\":99+$floor($random()*2),\t       \"tpgd\":69+$floor($random()*2),\t       \"pgst\":1+$floor($random()*2)\t   },\t   \"dta\":{\t       \"aeng\" : 3177+$floor($random()*10),\t       \"acyc\" : 13+$floor($random()*2),\t       \"batp\":100+$floor($random()*50),\t       \"inpp\":200+$floor($random()*50),\t       \"outp\":100+$floor($random()*50),\t       \"pckv\":23200+$floor($random()*1000),\t       \"pckc\":6+$floor($random()*10),\t       \"rsoc\":90+$floor($random()*10),\t       \"rcap\":4+$floor($random()*10),\t       \"fccp\":17904+$floor($random()*10),\t       \"pckt\":110+$floor($random()*10)\t   },\t   \"dia\" : {\t       \"cv01\" : 3189+$floor($random()*1000),\t       \"cv02\" : 3189+$floor($random()*1000),\t       \"cv03\" : 3189+$floor($random()*1000),\t       \"cv04\" : 3189+$floor($random()*1000),\t       \"cv05\" : 3189+$floor($random()*1000),\t       \"cv06\" : 3189+$floor($random()*1000),\t       \"cv07\" : 3189+$floor($random()*1000),\t       \"cv08\" : 3189+$floor($random()*1000)\t   }\t}",
+        "payloadType": "jsonata",
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "7b547845edda2d28"
+            ]
+        ]
+    },
+    {
+        "id": "ead5f0bd883bb338",
+        "type": "inject",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "Bk",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\t   \"att\":{\t       \"opid\":\"48AH2104000030\",\t       \"ppid\":\"48AH2104000030<<<<<<\",\t       \"flid\":\"\",\t       \"frmv\":\"3.1.2\"\t   },\t   \"sts\":{\t       \"time\":202100010001+$floor($random()*100),\t       \"udtm\":202100010001+$floor($random()*100),\t       \"crtm\":202100010001+$floor($random()*100),\t       \"gpss\" : 4,\t       \"gpfc\" : 100,\t       \"plat\":22+$random()*10,\t       \"plon\":114+$random()*10,\t       \"rcrd\":16+$floor($random()*2),\t       \"trhd\":99+$floor($random()*2),\t       \"tpgd\":69+$floor($random()*2),\t       \"pgst\":1+$floor($random()*2)\t   },\t   \"dta\":{\t       \"aeng\" : 3177+$floor($random()*10),\t       \"acyc\" : 13+$floor($random()*2),\t       \"batp\":100+$floor($random()*50),\t       \"inpp\":200+$floor($random()*50),\t       \"outp\":100+$floor($random()*50),\t       \"pckv\":23200+$floor($random()*1000),\t       \"pckc\":6+$floor($random()*10),\t       \"rsoc\":90+$floor($random()*10),\t       \"rcap\":4+$floor($random()*10),\t       \"fccp\":17904+$floor($random()*10),\t       \"pckt\":110+$floor($random()*10)\t   },\t   \"dia\" : {\t       \"cv01\" : 3189+$floor($random()*1000),\t       \"cv02\" : 3189+$floor($random()*1000),\t       \"cv03\" : 3189+$floor($random()*1000),\t       \"cv04\" : 3189+$floor($random()*1000),\t       \"cv05\" : 3189+$floor($random()*1000),\t       \"cv06\" : 3189+$floor($random()*1000),\t       \"cv07\" : 3189+$floor($random()*1000),\t       \"cv08\" : 3189+$floor($random()*1000)\t   }\t}",
+        "payloadType": "jsonata",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd004a4f6b8bf91d",
+        "type": "debug",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6359c2dcf94851bb",
+        "type": "mqtt in",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3e2b152025c21ebe",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7470fe5d56c81b4",
+        "type": "mqtt in",
+        "z": "da9e3a4c3b17b1c7",
+        "name": "",
+        "topic": "#",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "3f95c6440d61a454",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "fd004a4f6b8bf91d"
+            ]
+        ]
+    },
+    {
+        "id": "8697fa84da0a5aae",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-open",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3f95c6440d61a454",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-2.omnivoltaic.com",
+        "port": "1883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3e2b152025c21ebe",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-2.omnivoltaic.com",
+        "port": "8883",
+        "tls": "e3107d5c366e12e5",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e3107d5c366e12e5",
+        "type": "tls-config",
+        "name": "test",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "client.crt",
+        "keyname": "client.key",
+        "caname": "ca.crt",
+        "servername": "mqtt-2.omnivoltaic.com",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    }
+]
