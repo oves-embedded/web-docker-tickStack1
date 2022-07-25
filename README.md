@@ -111,9 +111,10 @@ The first time you run this command it will take sometime to finish downloading 
               Header: Authorization
               Value: Bearer {Accesstoken}
         ```
-      - Save & Test
-      - You will get an acknowledge message if everything is set correctly.
-      - You can now create your first dashboard while fetching data from GraphQL.
+   
+    - Save & Test
+    - You will get an acknowledge message if everything is set correctly.
+    - You can now create your first dashboard while fetching data from GraphQL.
 
 ## Getting latest changes from repository
 
