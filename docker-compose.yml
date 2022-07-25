@@ -51,9 +51,15 @@ services:
     image: eclipse-mosquitto:latest
     container_name: mqtt-protected
     ports:
+<<<<<<< HEAD
       - 8883:8883
     volumes:
       - './mosquitto/config:/mosquitto/config'
+=======
+      - 1884:1884
+    volumes:
+      - './mosquitto/config:/mosquitto/config:ro'
+>>>>>>> 5090fc46b064570f309434735291b8285e485fc4
       - './mosquitto/data:/mosquitto/data'
       - './mosquitto/log:/mosquitto/log'
 

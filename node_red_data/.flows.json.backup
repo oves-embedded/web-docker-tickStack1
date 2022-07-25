@@ -207,6 +207,7 @@
         "sessionExpiry": ""
     },
     {
+<<<<<<< HEAD
         "id": "8eef6a6eec90d536",
         "type": "mqtt-broker",
         "name": "",
@@ -216,6 +217,16 @@
         "clientid": "",
         "autoConnect": false,
         "usetls": true,
+=======
+        "id": "53260183398d77fb",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-open",
+        "port": "8884",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+>>>>>>> 5090fc46b064570f309434735291b8285e485fc4
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
@@ -234,6 +245,7 @@
         "sessionExpiry": ""
     },
     {
+<<<<<<< HEAD
         "id": "482a295faf261183",
         "type": "tls-config",
         "name": "mqtt-protected",
@@ -263,8 +275,11 @@
     },
     {
         "id": "a5ebf26292eaf8f2",
+=======
+        "id": "3faae7b6e25d714f",
+>>>>>>> 5090fc46b064570f309434735291b8285e485fc4
         "type": "inject",
-        "z": "94fa79fc5652e520",
+        "z": "da9e3a4c3b17b1c7",
         "name": "ovcamp1",
         "props": [
             {
@@ -281,6 +296,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
+<<<<<<< HEAD
         "payload": "{\t   \"att\":{\t       \"opid\":\"48AH2104000030\",\t       \"ppid\":\"48AH2104000030<<<<<<\",\t       \"flid\":\"\",\t       \"frmv\":\"3.1.2\"\t   },\t   \"sts\":{\t       \"time\":202100010001+$floor($random()*100),\t       \"udtm\":202100010001+$floor($random()*100),\t       \"crtm\":202100010001+$floor($random()*100),\t       \"gpss\" : 4,\t       \"gpfc\" : 100,\t       \"plat\":22+$random()*10,\t       \"plon\":114+$random()*10,\t       \"rcrd\":16+$floor($random()*2),\t       \"trhd\":99+$floor($random()*2),\t       \"tpgd\":69+$floor($random()*2),\t       \"pgst\":1+$floor($random()*2)\t   },\t   \"dta\":{\t       \"aeng\" : 3177+$floor($random()*10),\t       \"acyc\" : 13+$floor($random()*2),\t       \"batp\":100+$floor($random()*50),\t       \"inpp\":200+$floor($random()*50),\t       \"outp\":100+$floor($random()*50),\t       \"pckv\":23200+$floor($random()*1000),\t       \"pckc\":6+$floor($random()*10),\t       \"rsoc\":90+$floor($random()*10),\t       \"rcap\":4+$floor($random()*10),\t       \"fccp\":17904+$floor($random()*10),\t       \"pckt\":110+$floor($random()*10)\t   },\t   \"dia\" : {\t       \"cv01\" : 3189+$floor($random()*1000),\t       \"cv02\" : 3189+$floor($random()*1000),\t       \"cv03\" : 3189+$floor($random()*1000),\t       \"cv04\" : 3189+$floor($random()*1000),\t       \"cv05\" : 3189+$floor($random()*1000),\t       \"cv06\" : 3189+$floor($random()*1000),\t       \"cv07\" : 3189+$floor($random()*1000),\t       \"cv08\" : 3189+$floor($random()*1000)\t   }\t}",
         "payloadType": "jsonata",
         "x": 370,
@@ -316,6 +332,15 @@
         "wires": [
             [
                 "ad4784c6f6cfe4fb"
+=======
+        "payload": "{\t   \"att\":{\t       \"opid\":\"48AH2104000030\",\t       \"ppid\":\"48AH2104000030<<<<<<\",\t       \"flid\":\"\",\t       \"frmv\":\"3.1.2\"\t   },\t   \"sts\":{\t       \"plat\":\"22.684426\",\t       \"plon\":\"114.229656\",\t       \"rcrd\":16,\t       \"trhd\":99,\t       \"tpgd\":69,\t       \"pgst\":1\t   },\t   \"dta\":{\t       \"batp\":50+$floor($random()*10),\t       \"inpp\":10+$floor($random()*10),\t       \"outp\":15+$floor($random()*10),\t       \"pckv\":23200,\t       \"pckc\":6+$floor($random()*10),\t       \"rsoc\":95,\t       \"rcap\":4+$floor($random()*10),\t       \"fccp\":18+$floor($random()*10),\t       \"pckt\":110+$floor($random()*10)\t   }\t}",
+        "payloadType": "jsonata",
+        "x": 330,
+        "y": 120,
+        "wires": [
+            [
+                "7b547845edda2d28"
+>>>>>>> 5090fc46b064570f309434735291b8285e485fc4
             ]
         ]
     },
@@ -349,8 +374,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
+<<<<<<< HEAD
         "x": 300,
         "y": 380,
+=======
+        "x": 440,
+        "y": 340,
+>>>>>>> 5090fc46b064570f309434735291b8285e485fc4
         "wires": [
             [
                 "8713fe0fd336a8d1"
@@ -370,7 +400,11 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
+<<<<<<< HEAD
         "broker": "3f95c6440d61a454",
+=======
+        "broker": "53260183398d77fb",
+>>>>>>> 5090fc46b064570f309434735291b8285e485fc4
         "x": 670,
         "y": 120,
         "wires": []
@@ -379,6 +413,7 @@
         "id": "7b547845edda2d28",
         "type": "mqtt out",
         "z": "da9e3a4c3b17b1c7",
+<<<<<<< HEAD
         "name": "",
         "topic": "",
         "qos": "0",
@@ -569,6 +604,8 @@
         "id": "62c91696b6f11643",
         "type": "mqtt out",
         "z": "bed3a9855a294b17",
+=======
+>>>>>>> 5090fc46b064570f309434735291b8285e485fc4
         "name": "",
         "topic": "",
         "qos": "",
@@ -578,9 +615,15 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
+<<<<<<< HEAD
         "broker": "8697fa84da0a5aae",
         "x": 510,
         "y": 120,
+=======
+        "broker": "e9086dc1091e48c8",
+        "x": 650,
+        "y": 220,
+>>>>>>> 5090fc46b064570f309434735291b8285e485fc4
         "wires": []
     },
     {
