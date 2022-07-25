@@ -16,6 +16,9 @@
                 "welcome": "2.2.2"
             }
         },
-        "menu-menu-item-sidebar": true
+        "menu-menu-item-sidebar": true,
+        "debug": {
+            "filter": "filterCurrent"
+        }
     }
 }
