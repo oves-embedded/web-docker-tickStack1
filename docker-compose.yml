@@ -57,6 +57,16 @@ services:
       - './mosquitto/data:/mosquitto/data'
       - './mosquitto/log:/mosquitto/log'
 
+  # mqtt-open2:
+  #   image: eclipse-mosquitto:latest
+  #   container_name: mqtt-open2
+  #   volumes:
+  #     - './mqtt2.1/config:/mqtt2.1/config'
+  #     - './mqtt2.1/data:/mqtt2.1/data'
+  #     - './mqtt2.1/log:/mqtt2.1/log'
+  #   ports:
+  #     - 1884:1884
+
   mqtt-open:
     image: toke/mosquitto
     container_name: mqtt-open
